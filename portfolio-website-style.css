@@ -7,11 +7,13 @@
 
 html {
     scroll-behavior: smooth;
+    height: -webkit-fill-available;
 }
 
 body {
     background: black;
     color: #fff;
+    height: -webkit-fill-available;
 }
 
 #header {
