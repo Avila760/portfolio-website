@@ -481,6 +481,9 @@ nav .fa-solid {
     .copyright {
         font-size: 14px;
     }
+    .video-player-popup {
+        margin-top: 75%;
+    }
 }
 
 #msg {
