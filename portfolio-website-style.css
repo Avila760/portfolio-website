@@ -262,6 +262,7 @@ nav ul li a:hover::after {
     height: 50px;
     border-radius: 50%;
     text-align: center;
+    cursor: pointer;
 }
 
 .work:hover img {
@@ -272,7 +273,27 @@ nav ul li a:hover::after {
     height: 100%;
 }
 
-.btn {
+#cb {
+    display: none;
+}
+
+#cb:checked ~ .work-list .more-content {
+    display: block;
+}
+
+#cb:checked ~ .btn-less {
+    display: block;
+}
+
+#cb:checked ~ .btn-more {
+    display: none;
+}
+
+.more-content , .container .btn-less {
+    display: none;
+}
+
+.btn-more , .btn-less{
     display: block;
     margin: 50px auto;
     width: fit-content;
@@ -281,11 +302,42 @@ nav ul li a:hover::after {
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
-    transition: background-color 0.5s
+    transition: background-color 0.5s;
+    cursor: pointer;
 }
 
-.btn:hover {
+.btn-more:hover , .btn-less:hover {
     background-color: #4876B6;
+}
+
+.video-player-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(56, 56, 56, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 400ms ease;
+}
+
+.video-player-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.video-player-popup {
+    position: fixed;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    transition: all 400ms ease;
+}
+
+.video-player-overlay.active .video-player-popup {
+    transform: translate(-50%, 0);
+}
+
+.video-player-popup video {
+    width: 100%;
 }
 
 /* -----------contact----------- */
@@ -325,7 +377,7 @@ nav ul li a:hover::after {
     transform: translateY(-5px);
 }
 
-.btn.btn2 {
+.btn2 {
     display: inline-block;
     background: #4876B6;
 }
