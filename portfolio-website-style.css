@@ -342,6 +342,145 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+/* ---------other----------*/
+
+#other {
+    padding: 50px 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.6), #4876B6);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s ;
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #4876B6;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #ffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+
+#cb2 {
+    display: none;
+}
+
+#cb2:checked ~ .work-list .more-content2 {
+    display: block;
+}
+
+#cb2:checked ~ .btn-less2 {
+    display: block;
+}
+
+#cb2:checked ~ .btn-more2 {
+    display: none;
+}
+
+.more-content2 , .container .btn-less2 {
+    display: none;
+}
+
+.btn-more2 , .btn-less2{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #4876B6;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+.btn-more2:hover , .btn-less2:hover {
+    background-color: #4876B6;
+}
+
+.video-player-overlay2 {
+    position: fixed;
+    inset: 0;
+    background: rgba(56, 56, 56, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 400ms ease;
+}
+
+.video-player-overlay2.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.video-player-popup2 {
+    position: fixed;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    transition: all 400ms ease;
+}
+
+.video-player-overlay2.active .video-player-popup2 {
+    transform: translate(-50%, 0);
+}
+
+.video-player-popup2 video {
+    width: 100%;
+}
+
 /* -----------contact----------- */
 
 .contact-left {
